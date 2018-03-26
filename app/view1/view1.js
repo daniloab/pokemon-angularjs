@@ -37,7 +37,10 @@ angular.module('myApp.view1', ['ngRoute'])
         },
         error: function (e) {
           hideLoading();
+          $('#inputSearch').val('');
           $('.error').css('display', 'block');
+          $('#inputSearch').focus();
+          $('#inputSearch').attr("placeholder", "");
         }
       })
     }
