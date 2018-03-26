@@ -1,5 +1,5 @@
-<div class="wrapper">
-    <div class="app-header">
+<div class="wrapper col-md-12">
+    <div class="app-header col-md-12">
         <img class="app-logo" src="../images/pokelogo2.png">
         <h1 class="app-title">Find your favorite pokemon!</h1>
     </div>
@@ -9,7 +9,20 @@
                 <input type="text" ng-model="vm.pokemon" id="inputSearch" placeholder="Tell me it the name!">
                 <span class="error">no one pokemon found =( try it again!</span>
                 <button class="btn-busca text-center" ng-click="vm.searchPokemon(vm.pokemon)">Search!</button>
-            </div>            
+            </div>
         </form>
+        <div class="app-show-pokemon">
+            <div class="poke-result">
+                <div class="poke-img">
+                    <img src="{{vm.image}}" ng-src="{{vm.image}}">
+                    <span># {{vm.number}} - </span><span>{{vm.description}}</span>
+                </div>
+                <div class="poke-infos">
+                    <span>{{vm.type1}}</span>
+                    <span>{{vm.type2}}</span>
+                    <span>Lbs: {{}}</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

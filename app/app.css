@@ -9,6 +9,8 @@ body {
 .wrapper {
   border: 1px solid red;
   padding-bottom: 10px;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
 }
 
 .app-header {
