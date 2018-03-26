@@ -1,25 +1,108 @@
 /* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+body {
+  margin: 0;
+  padding-left: 300px;
+  padding-right: 300px;
+  font-family: sans-serif;
 }
 
-.menu:before {
-  content: "[";
+.wrapper {
+  border: 1px solid red;
+  padding-bottom: 10px;
 }
 
-.menu:after {
-  content: "]";
+.app-header {
+  text-align: center;
+  background-color: red;
+  height: 145px;
+  padding: 20px;
+  color: white;
 }
 
-.menu > li {
-  display: inline;
+.app-logo {
+  width: 170px;
+  height: 56px;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+.app-title {
+  font-size: 18px;
+  font-family: 'IBM Plex Mono', monospace;
 }
+
+.app-form {
+  padding: 40px;
+}
+
+.app-form input {
+  padding: 10px 56px;
+  text-decoration: none;
+  border: none;
+  border-bottom: 2px solid red;
+  outline: none;  
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+form div {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error {
+  display: none;
+  color: red;
+  font-size: 10px;  
+}
+
+.btn-busca {
+  margin-top: 15px;
+  color: red;
+  background-color: transparent !important;
+  border: 2px solid red;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.btn-busca:hover {
+  color: white;
+  background-color: red !important;
+  border: 2px solid red;
+  font-weight: bold;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.loading {
+  display: none;
+  position: fixed;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.8);
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+  .loading img {
+      position: absolute;
+      width: 15%;
+      top: 35%;
+      margin-top: -25px;
+      font-size: 50px;
+      left: 43%;
+      margin-left: -25px;
+      /* -webkit-animation: spin 2s linear infinite;
+      -moz-animation: spin 2s linear infinite;
+      -o-animation: spin 2s linear infinite;
+      -ms-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite; */
+  }
+
+/* @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } } */

@@ -1,1 +1,15 @@
-<p>This is the partial for view 1.</p>
+<div class="wrapper">
+    <div class="app-header">
+        <img class="app-logo" src="../images/pokelogo2.png">
+        <h1 class="app-title">Find your favorite pokemon!</h1>
+    </div>
+    <div class="app-body">
+        <form class="app-form">
+            <div class="col-xs-12 col-md-6">
+                <input type="text" ng-model="vm.pokemon" placeholder="Tell me it the name!">
+                <span class="error">no one pokemon found =( try it again!</span>
+                <button class="btn-busca text-center" ng-click="vm.searchPokemon(vm.pokemon)">Search!</button>
+            </div>            
+        </form>
+    </div>
+</div>
