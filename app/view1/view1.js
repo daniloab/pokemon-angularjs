@@ -13,6 +13,8 @@ angular.module('myApp.view1', ['ngRoute'])
 
     var vm = this;
 
+    vm.abilities = [];
+
     vm.searchPokemon = searchPokemon;
 
     function showLoading() {
@@ -31,28 +33,39 @@ angular.module('myApp.view1', ['ngRoute'])
         type: 'GET',
         success: function (data) {
           if (data) {
-            hideLoading();
             $('.error').css('display', 'none');
             console.log(data);
 
             vm.name = data.name;
-            vm.number = data.national_id;
-            vm.type1 = data.types[0].name;
+            vm.number = data.id;
+            vm.weight = data.weight
+            vm.type1 = data.types[0].type.name;
+            vm.img = data.sprites.front_default;
 
-            if(data.types.length == 2){
-              vm.type2 = data.types[1].name;
+            if (data.types.length == 2) {
+              vm.type2 = data.types[1].type.name;
             } else vm.type2 = null;
 
-            vm.descriptionURI = "http://pokeapi.co" + data.description[0].resource_uri;
-
-            $.ajax({
-              url: vm.descriptionURI,
-              type: 'GET',
-              success: function (data2) {
-                console.log(data2);
-              }
+            $.each(data.abilities, function (index, item) {
+              vm.abilities.push(item);
             })
 
+            vm.descriptionURL = "https://pokeapi.co/api/v2/characteristic/" + vm.number + "/";
+
+            $.ajax({
+              url: vm.descriptionURL,
+              type: 'GET',
+              success: function (data2) {
+                hideLoading();
+                console.log(data2);
+
+                $.each(data2.descriptions, function(index,item){
+                  if(item.language.name == "en"){
+                    vm.description = item.description;
+                  }
+                })
+              }
+            })
           }
         },
         error: function (e) {
