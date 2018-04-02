@@ -11,18 +11,22 @@
                 <button class="btn-busca text-center" ng-click="vm.searchPokemon(vm.pokemon)">Search!</button>
             </div>
         </form>
-        <!-- <div class="app-show-pokemon">
+        <div class="app-show-pokemon" ng-show="vm.showpoke">
             <div class="poke-result">
                 <div class="poke-img">
-                    <img src="{{vm.image}}" ng-src="{{vm.image}}">
+                    <p>{{vm.name}}</p>
+                    <img ng-src="{{vm.img}}">
                     <span># {{vm.number}} - </span><span>{{vm.description}}</span>
                 </div>
                 <div class="poke-infos">
                     <span>{{vm.type1}}</span>
-                    <span>{{vm.type2}}</span>
-                    <span>Lbs: {{}}</span>
+                    <span ng-if="vm.type2">{{vm.type2}}</span>
+                    <span>Weight: {{vm.weight}}</span>
+                    <ul>
+                        <li ng-repeat="item in vm.abilities">{{item.ability.name}} </li>
+                    </ul>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>

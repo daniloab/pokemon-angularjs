@@ -9,11 +9,13 @@ angular.module('myApp.view1', ['ngRoute'])
     });
   }])
 
-  .controller('View1Ctrl', [function ($scope) {
+  .controller('View1Ctrl', ['$scope', function ($scope) {
 
     var vm = this;
 
     vm.abilities = [];
+
+    vm.showpoke = false;
 
     vm.searchPokemon = searchPokemon;
 
@@ -35,6 +37,8 @@ angular.module('myApp.view1', ['ngRoute'])
           if (data) {
             $('.error').css('display', 'none');
             console.log(data);
+          
+            vm.abilities = [];
 
             vm.name = data.name;
             vm.number = data.id;
@@ -64,6 +68,10 @@ angular.module('myApp.view1', ['ngRoute'])
                     vm.description = item.description;
                   }
                 })
+
+                vm.showpoke = true;
+
+                $scope.$apply();
               }
             })
           }

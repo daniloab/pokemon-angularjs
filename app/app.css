@@ -108,3 +108,51 @@ form div {
 /* @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } } */
+
+.app-show-pokemon{
+  /* display:none; */
+  padding-right: 200px;
+  padding-left: 200px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.poke-img {
+  background: red;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.poke-img img {
+  background: white;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.poke-infos {
+  text-align: center;
+  border: 1px solid red;
+}
+
+.poke-infos p {
+  text-transform: capitalize;
+}
+
+.poke-infos span {
+  text-transform: capitalize;
+  display: block;
+}
+
+.poke-infos ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.poke-infos li {
+  display: inline;
+  font-size: 12px;
+}
