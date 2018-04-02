@@ -72,6 +72,12 @@ angular.module('myApp.view1', ['ngRoute'])
                 vm.showpoke = true;
 
                 $scope.$apply();
+              },
+              error: function (e) {
+                hideLoading();
+                
+                vm.showpoke = true;
+                $scope.$apply();
               }
             })
           }
